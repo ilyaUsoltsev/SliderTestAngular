@@ -1,0 +1,55 @@
+.dashboard {
+  margin: 20px 60px;
+  & .inputs {
+      margin-bottom: 20px;
+  }
+}
+
+input {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  color: #ccc;
+
+  &::placeholder {
+    color: #ccc;
+  }
+
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+button {
+  padding: 10px;
+  outline-color: none;
+  font-size: 1em;
+  display: block;
+  border-radius: 5px;
+
+  &.add {
+    width: 100%;
+  }
+
+  &.navigate {
+    width: 45%;
+  }
+}
+
+.prev-next {
+  margin-top: 10px;  
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}

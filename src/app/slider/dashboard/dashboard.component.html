@@ -1,0 +1,17 @@
+<div class="dashboard">
+  <div class="inputs">
+    <div>
+      <input #sizeInput type="number" placeholder="Size (50-250)"/>
+    </div>
+    <div>
+      <input #radiusInput type="number" placeholder="Border Radius"/>
+    </div>
+  </div>
+
+  <button class="add" (click)="onAddClick()">ADD SQUARE</button>
+
+  <div class="prev-next">
+    <button class="navigate" (click)="onPrevClick()">PREV</button>
+    <button class="navigate" (click)="onNextClick()">NEXT</button>
+  </div>
+</div>

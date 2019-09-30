@@ -1,0 +1,15 @@
+<div class="window">
+  <div
+    *ngFor="let image of images | async; index as i"
+    class="image"
+    [ngStyle]="
+      getImageStyles(
+        image,
+        i,
+        imageSize | async,
+        imageRadius | async,
+        imageIndex | async
+      )
+    "
+  ></div>
+</div>
