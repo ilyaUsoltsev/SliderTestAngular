@@ -9,18 +9,18 @@ import { Observable } from "rxjs";
   styleUrls: ["./window.component.scss"]
 })
 export class WindowComponent implements OnInit {
-  images: Observable<Image[]>;
-  imageSize: Observable<number>;
-  imageRadius: Observable<number>;
-  imageIndex: Observable<number>;
+  images$: Observable<Image[]>;
+  imageSize$: Observable<number>;
+  imageRadius$: Observable<number>;
+  imageIndex$: Observable<number>;
 
   constructor(private sls: SliderService) {}
 
   ngOnInit() {
-    this.images = this.sls.imagesSubject;
-    this.imageSize = this.sls.imageSizeSubject;
-    this.imageRadius = this.sls.imageRadiusSubject;
-    this.imageIndex = this.sls.imageIndexSubject;
+    this.images$ = this.sls.imagesSubject.asObservable();
+    this.imageSize$ = this.sls.imageSizeSubject.asObservable();
+    this.imageRadius$ = this.sls.imageRadiusSubject.asObservable();
+    this.imageIndex$ = this.sls.imageIndexSubject.asObservable();
   }
 
   getImageStyles(

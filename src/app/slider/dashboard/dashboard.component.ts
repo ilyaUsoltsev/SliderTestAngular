@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         debounceTime(500),
         distinctUntilChanged()
       )
-      .subscribe((size: any) => this.sls.imageSizeSubject.next(size));
+      .subscribe((size: number) => this.sls.imageSizeSubject.next(size));
 
     this.radiusSubscription = fromEvent<any>(
       this.radiusInput.nativeElement,
@@ -55,7 +55,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         debounceTime(500),
         distinctUntilChanged()
       )
-      .subscribe((size: any) => this.sls.imageRadiusSubject.next(size));
+      .subscribe((size: number) => this.sls.imageRadiusSubject.next(size));
   }
 
   onPrevClick() {
