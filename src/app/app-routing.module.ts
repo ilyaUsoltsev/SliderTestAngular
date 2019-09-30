@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { SliderComponent } from './slider/slider.component';
-
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { SliderComponent } from "./slider/slider.component";
 
 const routes: Routes = [
-  {path: '', component: SliderComponent}
+  { path: "slider", component: SliderComponent },
+  { path: "**", redirectTo: "slider" }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

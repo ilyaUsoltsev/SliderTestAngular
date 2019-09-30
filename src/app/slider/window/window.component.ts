@@ -17,7 +17,6 @@ export class WindowComponent implements OnInit {
   constructor(private sls: SliderService) {}
 
   ngOnInit() {
-    this.sls.generateImages();
     this.images = this.sls.imagesSubject;
     this.imageSize = this.sls.imageSizeSubject;
     this.imageRadius = this.sls.imageRadiusSubject;

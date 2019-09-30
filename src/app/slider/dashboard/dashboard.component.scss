@@ -1,5 +1,5 @@
 .dashboard {
-  margin: 20px 60px;
+  margin: 100px 60px;
   & .inputs {
       margin-bottom: 20px;
   }
@@ -11,10 +11,12 @@ input {
   outline: none;
   padding: 10px;
   font-size: 16px;
-  width: 250px;
-  height: 30px;
+  max-width: 250px;
+  height: 20px;
+  font-weight: 500;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
   display: inline-block;
   color: #ccc;
 
@@ -35,6 +37,8 @@ button {
   font-size: 1em;
   display: block;
   border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
 
   &.add {
     width: 100%;
@@ -42,6 +46,10 @@ button {
 
   &.navigate {
     width: 45%;
+  }
+
+  &:focus {
+    outline: none; 
   }
 }
 
@@ -52,4 +60,28 @@ button {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+}
+
+.input-wrapper {
+    display: flex;
+}
+
+.postfix {
+    background-color: white;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.postfix > div{
+    line-height: 40px;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    vertical-align: middle;
+    color: #ccc;
 }

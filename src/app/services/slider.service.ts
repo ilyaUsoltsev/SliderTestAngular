@@ -45,6 +45,7 @@ export class SliderService {
       imageUrl: `https://picsum.photos/${id}`,
       id
     });
+    this.images = images;
     this.imagesSubject.next(images);
   }
 }
