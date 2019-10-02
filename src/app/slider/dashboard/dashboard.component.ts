@@ -8,7 +8,7 @@ import {
 } from "@angular/core";
 import { SliderService } from "../../services/slider.service";
 import { fromEvent, Subscription, Observable } from "rxjs";
-import { ClickAction } from '../../utils/click-actions';
+import { ClickAction } from "../../utils/click-actions";
 import {
   map,
   debounceTime,
@@ -33,11 +33,13 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit() {}
 
   ngAfterViewInit() {
-    this.sizeSubscription = this.inputHandler(this.sizeInput)
-      .subscribe((size: number) => this.sls.imageSizeSubject.next(size));
+    this.sizeSubscription = this.inputHandler(this.sizeInput).subscribe(
+      (size: number) => this.sls.imageSizeSubject.next(size)
+    );
 
-    this.radiusSubscription = this.inputHandler(this.radiusInput)
-      .subscribe((size: number) => this.sls.imageRadiusSubject.next(size));
+    this.radiusSubscription = this.inputHandler(this.radiusInput).subscribe(
+      (size: number) => this.sls.imageRadiusSubject.next(size)
+    );
   }
 
   onPrevClick() {
@@ -58,16 +60,12 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   inputHandler(input: ElementRef): Observable<any> {
-    return fromEvent<any>(
-      input.nativeElement,
-      "keyup"
-    )
-      .pipe(
-        map(event => event.target.value),
-        map((i: string) => parseInt(i, 10)),
-        filter((i: number) => i <= 250),
-        debounceTime(500),
-        distinctUntilChanged()
-      );
+    return fromEvent<any>(input.nativeElement, "keyup").pipe(
+      map(event => event.target.value),
+      map((i: string) => parseInt(i, 10)),
+      filter((i: number) => i <= 250),
+      debounceTime(500),
+      distinctUntilChanged()
+    );
   }
 }
