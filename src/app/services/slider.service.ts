@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Image } from "../interfaces/image";
 import { BehaviorSubject, Observable } from "rxjs";
+import { ClickAction } from '../utils/click-actions';
 
 @Injectable({
   providedIn: "root"
@@ -27,12 +28,12 @@ export class SliderService {
     return this.images;
   }
 
-  updateCurrentImage(action: "NEXT" | "PREV"): void {
+  updateCurrentImage(action: string): void {
     const index = this.currentImageIndex;
-    if (this.images.length > index + 1 && action === "NEXT") {
+    if (this.images.length > index + 1 && action === ClickAction.next) {
       this.currentImageIndex++;
       this.imageIndexSubject.next(this.currentImageIndex);
-    } else if (index !== 0 && action === "PREV") {
+    } else if (index !== 0 && action === ClickAction.previous) {
       this.currentImageIndex--;
       this.imageIndexSubject.next(this.currentImageIndex);
     }

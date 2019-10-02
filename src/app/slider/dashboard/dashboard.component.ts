@@ -8,6 +8,7 @@ import {
 } from "@angular/core";
 import { SliderService } from "../../services/slider.service";
 import { fromEvent, Subscription, Observable } from "rxjs";
+import { ClickAction } from '../../utils/click-actions';
 import {
   map,
   debounceTime,
@@ -40,11 +41,11 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onPrevClick() {
-    this.sls.updateCurrentImage("PREV");
+    this.sls.updateCurrentImage(ClickAction.previous);
   }
 
   onNextClick() {
-    this.sls.updateCurrentImage("NEXT");
+    this.sls.updateCurrentImage(ClickAction.next);
   }
 
   onAddClick() {
